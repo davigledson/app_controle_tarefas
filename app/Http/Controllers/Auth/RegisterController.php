@@ -22,7 +22,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers; //trait (include / require) - chama os metodos como se fosse um include
 
     /**
      * Where to redirect users after registration.
