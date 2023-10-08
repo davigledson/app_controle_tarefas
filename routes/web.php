@@ -4,6 +4,7 @@ use App\Http\Controllers\TarefaController;
 use App\Mail\MensagemTesteMail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/mensagem-teste',function(){
-    return new MensagemTesteMail();
+    //return new MensagemTesteMail();
+    Mail::to('davi@gmail.com')->send(new MensagemTesteMail());
+    return 'E-mail enviado com sucesso';
 });
 
 Route::resource('tarefa', TarefaController::class);
