@@ -21,7 +21,7 @@ class TarefaController extends Controller
     {
         //
 
-                 $id = auth()->user()->id;
+                $id = auth()->user()->id;
                 $email =  auth()->user()->email;
                 $name =  auth()->user()->name;
                 return "voce $id $email $name esta logado no sistema";
@@ -44,7 +44,7 @@ class TarefaController extends Controller
         //     } else {
         //         return 'voce não esta logado no sistema';
         //     }
-        return 'Chegamos até aqui';
+        //return 'Chegamos até aqui';
     }
 
     /**
@@ -53,6 +53,7 @@ class TarefaController extends Controller
     public function create()
     {
         //
+        return view('tarefa.create');
     }
 
     /**
@@ -61,6 +62,10 @@ class TarefaController extends Controller
     public function store(Request $request)
     {
         //
+       // dd($request->all());
+       $tarefa = Tarefa::create($request->all());
+       return redirect()->route('tarefa.show',['tarefa' => $tarefa->id]);
+        //dd($tarefa->id);
     }
 
     /**
@@ -69,6 +74,7 @@ class TarefaController extends Controller
     public function show(Tarefa $tarefa)
     {
         //
+         dd($tarefa->getAttributes());
     }
 
     /**
