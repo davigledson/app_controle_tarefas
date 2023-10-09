@@ -22,10 +22,10 @@ class TarefaController extends Controller
     {
         //
 
-                $id = auth()->user()->id;
-                $email =  auth()->user()->email;
-                $name =  auth()->user()->name;
-                return "voce $id $email $name esta logado no sistema";
+                // $id = auth()->user()->id;
+                // $email =  auth()->user()->email;
+                // $name =  auth()->user()->name;
+                // return "voce $id $email $name esta logado no sistema";
 
         // if(auth()->check()){
         //     $id = auth()->user()->id;
@@ -45,7 +45,9 @@ class TarefaController extends Controller
         //     } else {
         //         return 'voce não esta logado no sistema';
         //     }
-        //return 'Chegamos até aqui';
+        $user_id = auth()->user()->id;
+        $tarefas = Tarefa::where('user_id',$user_id)->get();
+        return view('tarefa.index',['tarefas'=>$tarefas]);
     }
 
     /**
