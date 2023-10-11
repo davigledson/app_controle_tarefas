@@ -31,6 +31,6 @@ Route::get('/mensagem-teste',function(){
     //Mail::to('davi@gmail.com')->send(new MensagemTesteMail());
     //return 'E-mail enviado com sucesso';
 });
-
+Route::get('tarefa/exportacao',[TarefaController::class,'exportacao'])->name('tarefa.exportacao');
 Route::resource('tarefa', TarefaController::class)
 ->middleware('verified');
