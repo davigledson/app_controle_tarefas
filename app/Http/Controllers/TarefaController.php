@@ -48,7 +48,7 @@ class TarefaController extends Controller
         //         return 'voce não esta logado no sistema';
         //     }
         $user_id = auth()->user()->id;
-        $tarefas = Tarefa::where('user_id',$user_id)->paginate(1);
+        $tarefas = Tarefa::where('user_id',$user_id)->paginate(10);
         return view('tarefa.index',['tarefas'=>$tarefas]);
     }
 
