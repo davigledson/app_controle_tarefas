@@ -148,14 +148,18 @@ class TarefaController extends Controller
     }
     public function exportacao($extensao){
         //return Excel::download(new TarefasExport, 'lista_de_tarefas.xlsx');
-        if($extensao == 'xlsx'){
-            $nome_arquivo = 'lista_de_tarefas.'. $extensao;
-        } else if ($extensao == 'cvs'){
-            $nome_arquivo = 'lista_de_tarefas.'. $extensao;
-        } else {
-            return redirect()->route('tarefa.index');
+        if(in_array($extensao,['xlsx','csv'])){
+            return Excel::download(new TarefasExport, 'lista_de_tarefas.'. $extensao);
         }
+        return redirect()->route('tarefa.index');
+        // if($extensao == 'xlsx'){
+        //     $nome_arquivo = 'lista_de_tarefas.'. $extensao;
+        // } else if ($extensao == 'cvs'){
+        //     $nome_arquivo = 'lista_de_tarefas.'. $extensao;
+        // } else {
+        //     return redirect()->route('tarefa.index');
+        // }
 
-        return Excel::download(new TarefasExport, $nome_arquivo);
+
     }
 }
