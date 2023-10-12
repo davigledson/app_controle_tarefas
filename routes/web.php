@@ -32,5 +32,7 @@ Route::get('/mensagem-teste',function(){
     //return 'E-mail enviado com sucesso';
 });
 Route::get('tarefa/exportacao/{extensao}',[TarefaController::class,'exportacao'])->name('tarefa.exportacao');
+Route::get('tarefa/exportar',[TarefaController::class,'exportar'])->name('tarefa.exportar');
+
 Route::resource('tarefa', TarefaController::class)
 ->middleware('verified');
