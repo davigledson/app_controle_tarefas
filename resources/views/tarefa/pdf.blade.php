@@ -1,7 +1,33 @@
-<h2>
-    Chegamos até aqui
-</h2>
-<table>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+    <style>
+        .titulo {
+        border:1px;
+        background: #c2c2c2;
+        text-align: center;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 25px
+
+        }
+        .tabela {
+            width: 100%;
+        }
+        table th {
+            text-align: left;
+        }
+    </style>
+    <body>
+
+
+
+<div class="tituilo">
+   Lista de tarefas
+</div>
+<table class="tabela">
     <thead>
         <tr>
             <th>
@@ -32,3 +58,12 @@
         @endforeach
     </tbody>
 </table>
+{{-- para quebrar pagina --}}
+<div class="page-break"></div>
+<h2>Página 2</h2>
+<div class="page-break"></div>
+<h2>Página 2</h2>
+<div class="page-break"></div>
+<h2>Página 2</h2>
+</body>
+</html>
