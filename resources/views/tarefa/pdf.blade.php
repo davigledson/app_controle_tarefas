@@ -1,11 +1,11 @@
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     </head>
-    <style>
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>
         .titulo {
         border:1px;
-        background: #c2c2c2;
+        background-color: #c2c2c2;
         text-align: center;
         width: 100%;
         text-transform: uppercase;
@@ -19,12 +19,15 @@
         table th {
             text-align: left;
         }
+        .page-break {
+    page-break-after: always;
+}
     </style>
     <body>
 
 
 
-<div class="tituilo">
+<div class="titulo">
    Lista de tarefas
 </div>
 <table class="tabela">
